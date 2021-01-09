@@ -1,5 +1,5 @@
 FROM ubuntu:focal
-COPY gmsh-4.6.0-Linux64 /opt
+COPY gmsh-4.7.1-Linux64 /opt
 RUN ln -s /opt/bin/gmsh /usr/local/bin
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
