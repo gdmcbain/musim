@@ -23,8 +23,19 @@ docker push $IMAGE
 ### Run: Set up a new project
 
 ```PowerShell
+Set-Location $HOME\projects
 docker run -it --rm -v .:/workdir $IMAGE python -m poetry new a-package
 Get-ChildItem a-package
+Set-Location a-package
+docker run -it --rm -v .:/workdir $IMAGE python -m poetry add typer[all]
+docker run -it --rm -v .:/workdir $IMAGE python -m poetry install
+```
+
+We have falsified `virtualenvs.create`, so
+
+```PowerShell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
 ```
 
 ## Readings

@@ -6,6 +6,7 @@ ENV POETRY_VENV=/opt/.venv
 RUN python -m venv ${POETRY_VENV}
 ENV PATH="$POETRY_VENV/bin:$PATH"
 RUN python -m pip install poetry==${POETRY_VERSION}
+RUN python -m poetry config virtualenvs.create false
 
 WORKDIR /workdir
 COPY . /workdir
