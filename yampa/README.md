@@ -39,3 +39,18 @@ docker run -i --rm -v ${PWD}:/w -w /w gdmcbain/yampa:0.1.0
 :load example.hs
 reactimate firstSample nextSamples output signalFunction  -- and be ready to hit Ctrl+C
 ```
+
+### Another example
+
+[reactimate.hs](./reactimate.hs):
+
+```PowerShell
+docker run --rm -v ${PWD}:/w -w /w gdmcbain/yampa:0.1.0 runhaskell reactimate.hs
+```
+
+This should write:
+
+```text
+Hello... wait for it...
+World!
+```
