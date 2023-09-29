@@ -29,7 +29,7 @@ docker run --rm -v ${PWD}:/w -w /w gdmcbain/yampa:0.1.0 ghc onelinetest.hs
 docker run --rm -v ${PWD}:/w -w /w gdmcbain/yampa:0.1.0 ./onelinetest
 ```
 
-### The first real example
+### The first real example of [`reactimate`](https://hackage.haskell.org/package/Yampa-0.14.4/docs/FRP-Yampa-Simulation.html#v:reactimate)
 
 ```PowerShell
 docker run -i --rm -v ${PWD}:/w -w /w gdmcbain/yampa:0.1.0
@@ -40,7 +40,7 @@ docker run -i --rm -v ${PWD}:/w -w /w gdmcbain/yampa:0.1.0
 reactimate firstSample nextSamples output signalFunction  -- and be ready to hit Ctrl+C
 ```
 
-### Another example
+### Another example, this one terminating
 
 [reactimate.hs](./reactimate.hs):
 
@@ -55,7 +55,7 @@ Hello... wait for it...
 World!
 ```
 
-### `embed`
+### [`embed`](https://hackage.haskell.org/package/Yampa-0.14.4/docs/FRP-Yampa-Simulation.html#v:embed)
 
 See [Running primitive signal functions in Yampa](https://lambdor-net.readthedocs.io/embed.html).
 
@@ -78,5 +78,4 @@ embed (constant 537) (Nothing, map (,Nothing) h)  --[537,537,537,537]
 embed (constant 537) (123, zip h $ map Just [234, 345, 456])  --[537,537,537,537]
 embed time (Nothing, map (,Nothing) h)  --[0.0,1.0,1.2,1.23]
 embed time (123, zip h $ map Just [234, 345, 456])  -- ditto
-
 ```
