@@ -79,3 +79,17 @@ embed (constant 537) (123, zip h $ map Just [234, 345, 456])  --[537,537,537,537
 embed time (Nothing, map (,Nothing) h)  --[0.0,1.0,1.2,1.23]
 embed time (123, zip h $ map Just [234, 345, 456])  -- ditto
 ```
+
+### [Using external packages in ghci](https://www.haskell.org/ghcup/steps/#using-external-packages-in-ghci)
+
+#### `cabal repl`
+
+```PowerShell
+docker run -it --rm gdmcbain/yampa:0.1.0 cabal repl --build-depends async,say
+```
+
+```haskell
+import Control.Concurrent.Async
+import Say
+concurrently_ (sayString "Hello") (sayString "World")
+```
