@@ -21,4 +21,31 @@ runCircuit (pickWord rng) [(), (), ()]  --["bird","cat","bird"]
 runCircuit oneShot [(), (), (), (), ()]  --[True,False,False,False,False]
 runCircuit (delayedEcho False) [True, False, False, False, True]
 runCircuit (getWord rng) [(), (), ()] --["bird","bird","bird"]
+main
+```
+
+```text
+Welcome to Arrow Hangman
+___
+Lives: [#####]
+a___
+Lives: [#### ]
+e
+
+___
+Lives: [#### ]
+g__g
+Lives: [#### ]
+
+
+__g
+Lives: [#### ]
+dd_g
+Lives: [#### ]
+o
+
+d_g
+Lives: [#### ]
+odog
+You won!
 ```
