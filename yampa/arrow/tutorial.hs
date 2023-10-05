@@ -1,3 +1,5 @@
+{-# LANGUAGE Arrows #-}
+
 module Main where
 
 import Control.Arrow
@@ -39,5 +41,14 @@ accum' acc f = accum acc (\a b -> let b' = a `f` b in (b', b'))
 
 total :: Num a => Circuit a a
 total = accum' 0 (+)
+
+mean1 :: Fractional a => Circuit a a
+mean1 = (total &&& (const 1 ^>> total)) >>> arr (uncurry (/))
+
+mean2 :: Fractional a => Circuit a a
+mean2 = proc value -> do
+    t <- total -< value
+    n <- total -< 1
+    returnA -< t / n
 
 main = putStrLn $ show $ runCircuit total [1,0,1,0.0,2]
