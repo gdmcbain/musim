@@ -10,5 +10,5 @@ RUN sh -c "wget -O - http://dl.openfoam.org/gpg.key | apt-key add -" ; \
     apt-get update && \
     apt-get install -y openfoam11 && \
     rm -rf /var/lib/apt/lists/*
-ENV WM_PROJECT_DIR=/opt/openfoam8
+ENV WM_PROJECT_DIR=/opt/openfoam11
 ENV PATH=${WM_PROJECT_DIR}/bin:"${PATH}"
