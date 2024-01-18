@@ -1,4 +1,5 @@
 # SciML
+
 ```PowerShell
-docker build -t gdmcbain/sciml:0.1.0 .
+docker build -t gdmcbain/sciml:0.2.0 .
 ```
